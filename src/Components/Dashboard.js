@@ -1,11 +1,12 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
 
-class Location extends Component {
+class Dashboard extends Component {
     render(){
         return(
-            <div>Location</div>
+            <div>Landing Page</div>
+
         )
     }
 }
 
-export default Location
+export default Dashboard

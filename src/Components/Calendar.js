@@ -1,11 +1,14 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
 
-class When extends Component {
+class Calendar extends Component {
     render(){
         return(
-            <div>When</div>
+            <div>
+                Calendar
+                {/* where weather might be very crucial */}
+            </div>
         )
     }
 }
 
-export default When
+export default Calendar

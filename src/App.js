@@ -8,7 +8,7 @@ import styled from 'styled-components';
 class App extends Component {
   render(){
     return (
-      <div>
+      <div style={{width:'100%',background:'red',height:'100vh'}}>
         <Header/>
         {routes}
       </div>

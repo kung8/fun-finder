@@ -1,17 +1,19 @@
-import {Switch, Route} from 'react-router-dom'
-import React from 'react'
-import Dash from './Components/Dashboard'
-import Day from './Components/Calendar'
-import Activities from './Components/Activities'
-import Deals from './Components/Deals'
-import Size from './Components/Size'
+import {Switch, Route} from 'react-router-dom';
+import React from 'react';
+import Dashboard from './Components/Dashboard';
+import Calendar from './Components/Calendar';
+import Category from './Components/Category';
+import Deals from './Components/Deals';
+import Group from './Components/Group';
+import Dining from './Components/Dining'
 
 export default (
         <Switch>  
-            <Route path='/calendar' component={Day} />
-            <Route path='/activities' component={Activities}/>
+            <Route path='/dining' component={Dining}/>
+            <Route path='/calendar' component={Calendar}/>
+            <Route path='/category' component={Category}/>
             <Route path='/deals' component={Deals}/>
-            <Route path='/group' component={Size}/>
-            <Route exact path='/' component={Dash}/>
+            <Route path='/group' component={Group}/>
+            <Route exact path='/' component={Dashboard}/>
         </Switch> 
 )
