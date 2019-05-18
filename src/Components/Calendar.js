@@ -6,6 +6,10 @@ class Calendar extends Component {
             <div>
                 Calendar
                 {/* where weather might be very crucial */}
+                {/* get an API for weather */}
+                {/* get an API for calendar */}
+                {/* defaults to your current location */}
+                {/* user can switch location  */}
             </div>
         )
     }

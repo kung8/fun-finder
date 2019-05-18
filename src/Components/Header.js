@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 class Header extends Component {
     render() {
         return (
-            <header style={{width:'100vw', display: 'flex', justifyContent: 'space-between', height: '85px', alignItems: 'center', fontSize: '30px', background: 'navy', color: 'white' }}>
-                <Link to='/' style={{ textDecoration: 'none', color: 'white', width:'5%' }}>
-                    <i>Logo</i>
+            <header style={{ width: '100vw', display: 'flex', justifyContent: 'space-between', height: '85px', alignItems: 'center', fontSize: '30px', background: 'navy', color: 'white' }}>
+                <Link to='/' style={{ textDecoration: 'none', color: 'white', width: '5%' }}>
+                    <i style={{ fontFamily: 'cursive', marginLeft: 20 }}>ff ff</i>
                 </Link>
                 <div style={{ display: 'flex', width: '85%', justifyContent: 'space-evenly' }}>
                     {/* <Link to='/group' style={{ textDecoration: 'none', color: 'white' }}>
@@ -26,7 +26,7 @@ class Header extends Component {
                     </Link>
                 </div>
 
-                <h2 style={{ width: '10%', textAlign: 'right'}}>Location</h2>
+                <h2 style={{ width: '10%', textAlign: 'right', marginRight: 20 }}>Location</h2>
                 {/* how to get the location of the user */}
                 {/* how will users be able to upload */}
                 {/* I will want people to create an account if they are to be able to like/create events/post/activities */}
