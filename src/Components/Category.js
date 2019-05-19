@@ -21,11 +21,9 @@ class Category extends Component {
                     <option>Outdoor</option>
                     <option>Museum</option>
                     <option>Arts/Crafts</option>
-                    <option>Magic</option>
                     <option>Book/Educational</option>
                     <option>Lecture</option>
                     <option>Dance</option>
-                    <option>Circus</option>
                     <option>Theatre/Film</option>
                     <option>Improv/Comedy Shows</option>
                     <option>Video Games</option>
@@ -33,11 +31,10 @@ class Category extends Component {
                     <option>Service</option>
                 </select>
                 <select>
-                    <option>Any Group Size</option>
-                    <option>Couples</option>
-                    <option>Families</option>
-                    <option>Individuals</option>
-                    <option>Small Groups</option>
+                    <option>Type of Group</option>
+                    <option>Date</option>
+                    <option>Family</option>
+                    <option>Friends</option>
                     <option>Large Groups (+10)</option>
                 </select>
                 <select>
