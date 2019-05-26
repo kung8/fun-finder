@@ -27,12 +27,32 @@ class Dashboard extends Component {
         console.log(this.state.events)
         const { events } = this.state
         const mappedEvents = events.map(event => {
+
             return (
-                <div key={event.event_id} style={{ alignItems:'center',display:'flex', flexDirection:'column',border: 'solid black 2px', width: '300px', height: '300px', background: 'white', margin: '10px'}}>
-                    <img src={event.image} alt="" height='200px' width='250px' />
-                    <h1 style={{fontSize:20}}>{event.event_name}</h1>
-                    <p>{event.address}</p>
-                    <p>{event.city}, {event.state} {event.zipcode}</p>
+                <div key={event.event_id} style={{ alignItems:'center',display:'flex', flexDirection:'column',border: 'solid black 2px', width: '300px', height: '450px', background: 'black', margin: '10px',fontSize:18,color:'white',borderRadius:'16px'}}>
+                    <img src={event.image} alt="event image" style={{maxHeight:200,minHeight:200,borderRadius:'16px 16px 0 0'}} width='100%' />
+                    <div style={{display:'flex',flexDirection:'column',alignItems:'center',padding:10}}>
+                        <h1 style={{fontSize:30}}>{event.event_name}</h1>
+                        <div style={{display:'flex',flexDirection:'column',alignItems:'center',marginTop:5}}>
+                            <p>{event.address}</p>
+                            <p>{event.city}, {event.state} {event.zipcode}</p>
+                        </div>
+                        <div style={{display:'flex',flexDirection:'column',alignItems:'center',marginTop:5}}>
+                            <p>{event.day} {event.date} {event.month} {event.year}</p>
+                            <p>{event.start_time} to {event.end_time}</p>
+                        </div>
+                        <div style={{width:'95%',textAlign:'center',marginTop:10,overflowY:'scroll',height:80}}>
+                            <p>{event.details}</p>
+                        </div>
+                        <div style={{display:'flex',justifyContent:'space-evenly',width:'100%',marginTop:5}}>
+                            <button style={{background:'forestgreen',color:'white',height:'25px',borderRadius:'10px'}}>
+                                <i className="fas fa-star"/> Interested
+                            </button>
+                            <button style={{background:'forestgreen',color:'white',height:'25px',borderRadius:'10px'}}>
+                                <i className="fas fa-pencil-alt"/> Edit
+                            </button>
+                        </div>
+                    </div>
                 </div>
             )
         })

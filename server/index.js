@@ -12,3 +12,4 @@ massive(CONNECTION_STRING).then(db=>{
 })
 //ENDPOINTS
 app.get('/api/getAllEvents',ctrl.getAllEvents)
+app.get('/api/getEvents',ctrl.getEvents)
