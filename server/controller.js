@@ -1,7 +1,25 @@
 module.exports = {
     getAllEvents: async (req, res) => {
         const db = req.app.get('db')
-        const events = await db.Events.get_all_events()
+        let events = await db.Events.get_all_events()
+
+        let newDate = new Date()
+        let date = newDate.getDate()
+        let month = newDate.getMonth()
+        let year = newDate.getFullYear()
+
+        events = events.filter(event => {
+            return +event.year >= year
+        }).filter(event => {
+            if (+event.year === year) {
+                return +event.month >= month
+            }
+        }).filter(event => {
+            if (+event.month === month) {
+                return +event.date >= date
+            }
+        })
+
         events.map(event => {
             let startTime = event.start_time
             let startBegin = startTime.substring(0, 2)
@@ -140,7 +158,7 @@ module.exports = {
         }
 
         //filter out old events and convert months back to string
-        events.filter(event => {
+        events = events.filter(event => {
             return +event.year >= year
         }).filter(event => {
             if (+event.year === year) {
@@ -150,7 +168,9 @@ module.exports = {
             if (+event.month === month) {
                 return +event.date >= date
             }
-        }).map(event => {
+        })
+        
+        events.map(event => {
             if (+event.month === 0) {
                 return event.month = 'January'
             } else if (+event.month === 1) {
