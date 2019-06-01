@@ -20,6 +20,10 @@ module.exports = {
             }
         })
 
+        events = events.sort((a,b)=>{
+            return new Date((`${a.month}/${a.date}/${a.year}`)) - new Date((`${b.month}/${b.date}/${b.year}`))
+        })
+
         events.map(event => {
             let startTime = event.start_time
             let startBegin = startTime.substring(0, 2)
@@ -93,7 +97,6 @@ module.exports = {
     getEvents: async (req, res) => {
         const db = req.app.get('db')
         const { order, category, group, day, time, search } = req.query
-        // console.log(order,group,search)
         let newDate = new Date()
         let date = newDate.getDate()
         let month = newDate.getMonth()
@@ -157,6 +160,7 @@ module.exports = {
             })
         }
 
+        
         //filter out old events and convert months back to string
         events = events.filter(event => {
             return +event.year >= year
@@ -169,7 +173,14 @@ module.exports = {
                 return +event.date >= date
             }
         })
+        console.log(order)
+        if(order === 'Order by Date'){
+            events = events.sort((a,b)=>{
+                return new Date((`${a.month}/${a.date}/${a.year}`)) - new Date((`${b.month}/${b.date}/${b.year}`))
+            })
+        }
         
+
         events.map(event => {
             if (+event.month === 0) {
                 return event.month = 'January'
@@ -277,7 +288,6 @@ module.exports = {
 
             return event
         })
-        // console.log(events)
         res.status(200).send(events)
     },
 
