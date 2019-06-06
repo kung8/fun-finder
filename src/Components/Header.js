@@ -6,14 +6,14 @@ class Header extends Component {
     render() {
         return (
             <Head>
-                <Link to='/' style={{ textDecoration: 'none', color: 'white', width: '5%'}}>
+                <header style={{ textDecoration: 'none', color: 'white', width: '5%'}}>
                     <i style={{ fontFamily: 'cursive', marginLeft: 20 }}>ff ff</i>
-                </Link>
+                </header>
                 <div style={{ display: 'flex', width: '85%', justifyContent: 'space-evenly' }}>
                     {/* <Link to='/group' style={{ textDecoration: 'none', color: 'white' }}>
                         <h2>Party Size</h2>
                     </Link> */}
-                    <Link to='/category' style={{ textDecoration: 'none', color: 'white' }}>
+                    <Link to='/' style={{ textDecoration: 'none', color: 'white' }}>
                         <h2>Category</h2>
                     </Link>
                     <Link to='/calendar' style={{ textDecoration: 'none', color: 'white' }}>

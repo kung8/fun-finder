@@ -5,26 +5,27 @@ class Dashboard extends Component {
     constructor() {
         super()
         this.state = {
-            events: []
+            events: []        
         }
     }
 
     componentDidMount() {
         //this is where I will be doing an axios call for all the events how to do the top 20 events at a time...
         //save this to state and then map through in the render
-        this.getAllEvents()
+        //learn pagination
+        // this.getAllEvents()
     }
 
-    getAllEvents = async () => {
-        let events = await axios.get('/api/getAllEvents')
-        console.log(events.data)
-        this.setState({
-            events: events.data
-        })
-    }
+    // getAllEvents = async () => {
+    //     let events = await axios.get('/api/getAllEvents')
+    //     console.log(events.data)
+    //     this.setState({
+    //         events: events.data
+    //     })
+    // }
 
     render() {
-        console.log(this.state.events)
+        // console.log(this.state.events)
         const { events } = this.state
         const mappedEvents = events.map(event => {
 
@@ -60,15 +61,17 @@ class Dashboard extends Component {
 
         return (
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '10px' }}>
-                <div style={{ background: 'yellow', width: '40%', display: 'flex', justifyContent: 'space-between' }}>
-                    <button>See Your Events</button>
+                {/* <div style={{ background: 'yellow', width: '40%', display: 'flex', justifyContent: 'space-between' }}> */}
+                    
+                    {/* <button>See Your Events</button> */}
                     {/* it will just filter out your events when you click on that you like */}
                     {/* for your events you will be able to edit them */}
+                    
                     <button>Add Event</button>
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'space-evenly', flexWrap: 'wrap' }}>
+                {/* </div> */}
+                {/* <div style={{ display: 'flex', justifyContent: 'space-evenly', flexWrap: 'wrap' }}>
                     {mappedEvents}
-                </div>
+                </div> */}
             </div>
 
         )

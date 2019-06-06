@@ -178,6 +178,8 @@ module.exports = {
             events = events.sort((a,b)=>{
                 return new Date((`${a.month}/${a.date}/${a.year}`)) - new Date((`${b.month}/${b.date}/${b.year}`))
             })
+        } else if(order === 'distance'){
+            
         }
         
 
@@ -292,5 +294,4 @@ module.exports = {
     },
 
     //when somebody creates an event must use a template where they will save the month as a number so it can do the math initially as is. 
-
 }
